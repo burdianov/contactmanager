@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Header = props => {
   const { branding } = props;
-  console.log("branding: ", branding);
+
   return (
     <div>
       <h1>{branding}</h1>
