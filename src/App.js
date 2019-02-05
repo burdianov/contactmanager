@@ -6,7 +6,7 @@ import Header from "./components/layout/Header";
 import { Provider } from "./context";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import AddContact from "./components/contacts/AddContact1";
+import AddContact from "./components/contacts/AddContact";
 
 class App extends Component {
   render() {
