@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AddContact from "./components/contacts/AddContact";
 import About from "./components/pages/About";
 import NotFound from "./components/pages/NotFound";
+import Fiddle from "./components/fiddling/Fiddle";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
                 <Route exact path="/contact/add" component={AddContact} />
                 <Route exact path="/about" component={About} />
                 {/* <Route exact path="/about/:id" component={About} /> */}
+                <Route exact path="/fiddle" component={Fiddle} />
                 <Route component={NotFound} />
               </Switch>
             </div>
