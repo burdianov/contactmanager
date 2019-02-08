@@ -1,40 +1,51 @@
 import React, { Component } from "react";
 
 class Fiddle extends Component {
-  state = {};
-  componentWillMount() {
-    console.log("componentWillMount...");
-  }
+  state = {
+    title: "",
+    body: ""
+  };
 
   componentDidMount() {
-    console.log("componentDidMount...");
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          title: data.title,
+          body: data.body
+        })
+      );
   }
 
-  componentWillUpdate() {
-    console.log("componentWillUpdate...");
-  }
+  // componentWillMount() {
+  //   console.log("componentWillMount...");
+  // }
+  // componentWillUpdate() {
+  //   console.log("componentWillUpdate...");
+  // }
 
-  componentDidUpdate() {
-    console.log("componentDidUpdate...");
-  }
+  // componentDidUpdate() {
+  //   console.log("componentDidUpdate...");
+  // }
 
-  componentWillReceiveProps(nextProps, nextState) {
-    console.log("componentWillReceiveProps...");
-  }
+  // componentWillReceiveProps(nextProps, nextState) {
+  //   console.log("componentWillReceiveProps...");
+  // }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    return null;
-  }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   return null;
+  // }
 
-  getSnapshotBeforeUpdate(prevProps, prevState) {
-    console.log("getSnapshotBeforeUpdate...");
-  }
+  // getSnapshotBeforeUpdate(prevProps, prevState) {
+  //   console.log("getSnapshotBeforeUpdate...");
+  // }
 
   render() {
-    console.log("render...");
+    const { title, body } = this.state;
     return (
       <div>
-        <h1>Fiddle</h1>
+        <h1>{title}</h1>
+        <p>{body}</p>
       </div>
     );
   }
